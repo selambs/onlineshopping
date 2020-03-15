@@ -1,2 +1,2 @@
 # onlineshopping
-Final Project for Node.js--Online Shopping
+Contributors' name : Ashim Ghimire, Mohammed Hassan, Selamawit Shibru, Berket Teklu
