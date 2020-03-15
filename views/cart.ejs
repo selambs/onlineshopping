@@ -1,0 +1,14 @@
+<%-include("fragments/head.ejs")%>
+
+<body>
+    <% for(let prod of product){%>
+    <div class="container">
+        <h1>Title: <%= prod.title %></h1>
+        <p>Price: <%= prod._id%></p>
+        <p>Price: <%= prod.id%></p>
+
+        <p>Price: <%= prod.price %></p>
+        <% } %>
+    </div>
+</body>
+<!-- <%-include("fragments/end.ejs") %> -->

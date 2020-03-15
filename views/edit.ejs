@@ -1,0 +1,42 @@
+<%-include("fragments/head.ejs")%>
+
+
+
+
+
+
+<!-- 
+<div class="container">
+    <h1>Title: <%= prod.title %></h1>
+
+    <p>Price: <%= prod.price %></p>
+
+</div> -->
+
+<div class="container">
+    <form action="/edit" method="post">
+        <input type="hidden" name="id" value="<%= prod._id%>">
+        <!-- <label for="id">ID:</label><br>
+        <input type="text" id="id" name="id" value="<%= prod.id%>" readonly><br> -->
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="<%= prod.title%>"><br>
+        <label for="imageUrl">Image URL:</label><br>
+        <input type="text" id="imageUrl" name="imageUrl" value="<%= prod.imageUrl%>"><br><br>
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" value="<%= prod.price%>"><br><br>
+        <label for="description">Description:</label><br>
+        <textarea name="description"><%= prod.title %></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%-include("fragments/end.ejs")%>

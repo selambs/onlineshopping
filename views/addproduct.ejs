@@ -1,0 +1,61 @@
+<%-include("fragments/head.ejs")%>
+
+
+<!-- <div class="container">
+    <div class="row">
+        <% for(let prod of prods){%>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><%= prod.product%></div>
+                <div class="panel-body"><img src="<%= prod.imageUrl%>" class="img-responsive" style="width:100%"
+                        alt="Image"><%= prod.price%></div>
+                <div class="panel-footer"><%= prod.title%></div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div><br> -->
+
+
+
+<footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+        <div class="w3-col s4">
+            <h4>SEE YOU AGAIN!!</h4>
+            <p>YOUR list</p>
+            <% for(let prod of prods){%>
+            <form action="/" method="POST">
+                <p><input class="w3-input w3-border" type="text" placeholder="product222" name="product"
+                        value="<%= prod.product%>"></p>
+                <p><input class="w3-input w3-border" type="text" placeholder="title" name="title"
+                        value="<%= prod.title%>"></p>
+                <p><input class="w3-input w3-border" type="text" placeholder="price" name="price"
+                        value="<%= prod.price%>"></p>
+            </form>
+            <div class="panel-footer">
+                <a class="btn btn-primary" href="/viewdetail/<%= prod._id%>" role="button">View Detail</a>
+                <a class="btn btn-primary" href="/edit/<%= prod._id%>" role="button">Edit</a>
+                <form action="/delete" method="POST">
+                    <input type="hidden" name="id" value="<%= prod._id%>">
+                    <button type="submit" class="btn btn-danger">DELETE</button>
+                </form>
+                <form action="/cart/<%= prod._id%>" method="POST">
+                    <p><input class="w3-input w3-border" type="hidden" placeholder="product222" name="product"
+                            value="<%= prod.product%>"></p>
+                    <p><input class="w3-input w3-border" type="hidden" placeholder="title" name="title"
+                            value="<%= prod.title%>"></p>
+                    <p><input class="w3-input w3-border" type="hidden" placeholder="price" name="price"
+                            value="<%= prod.price%>"></p>
+                    <input type="hidden" name="id" value="<%= prod.id%>">
+                    <button type="submit" class="btn btn-danger">Add To Cart</button>
+                </form>
+            </div>
+
+            <div class="w3-col s4 w3-justify"></div>
+            <% } %>
+</footer>
+
+
+</body>
+
+</html>
